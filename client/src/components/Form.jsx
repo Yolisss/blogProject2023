@@ -1,43 +1,64 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 
-const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
-  // This is the original State with not initial student
-  const [student, setStudent] = useState(
-    editingStudent || {
-      firstname: "",
-      lastname: "",
-      is_current: false,
+const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
+  // This is the original State with not initial blog
+  const [blog, setBlog] = useState(
+    editingBlog || {
+      title: "",
+      blog_body: "",
+      image: "",
+      secondary_image: "",
+      date: "",
     }
   );
 
   //create functions that handle the event of the user typing into the form
-  const handleNameChange = (event) => {
-    const firstname = event.target.value;
-    setStudent((student) => ({ ...student, firstname }));
+  const handleTitleChange = (event) => {
+    const title = event.target.value;
+    setBlog((blog) => ({ ...blog, title }));
   };
 
-  const handleLastnameChange = (event) => {
-    const lastname = event.target.value;
-    setStudent((student) => ({ ...student, lastname }));
+  const handleBlogChange = (event) => {
+    const blog_body = event.target.value;
+    setBlog((blog) => ({ ...blog, blog_body }));
   };
 
-  const handleCheckChange = (event) => {
-    const is_current = event.target.checked;
-    //console.log(iscurrent);
-    setStudent((student) => ({ ...student, is_current }));
+  const handleImageChange = (event) => {
+    const image = event.target.value;
+    setBlog((blog) => ({ ...blog, image }));
   };
+  const handleSecondaryImageChange = (event) => {
+    const secondary_image = event.target.value;
+    setBlog((blog) => ({ ...blog, secondary_image }));
+  };
+  const handleDateChange = (event) => {
+    const date = event.target.value;
+    setBlog((blog) => ({ ...blog, date }));
+  };
+
+  //   const handleCheckChange = (event) => {
+  //     const is_current = event.target.checked;
+  //     //console.log(iscurrent);
+  //     setStudent((blog) => ({ ...blog, is_current }));
+  //   };
 
   const clearForm = () => {
-    setStudent({ firstname: "", lastname: "", is_current: false });
+    setBlog({
+      title: "",
+      blog_body: "",
+      image: "",
+      secondary_image: "",
+      date: "",
+    });
   };
 
   //A function to handle the post request
-  const postStudent = (newStudent) => {
-    return fetch("http://localhost:9090/api/students", {
+  const postBlog = (newBlog) => {
+    return fetch("http://localhost:9090/api/blogs", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newStudent),
+      body: JSON.stringify(newBlog),
     })
       .then((response) => {
         return response.json();
@@ -45,24 +66,24 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
       .then((data) => {
         //console.log("From the post ", data);
         //I'm sending data to the List of Students (the parent) for updating the list
-        onSaveStudent(data);
+        onSaveBlog(data);
         //this line just for cleaning the form
         clearForm();
       });
   };
 
   //A function to handle the post request
-  const putStudent = (toEditStudent) => {
-    return fetch(`http://localhost:9090/api/students/${toEditStudent.id}`, {
+  const putBlog = (toEditBlog) => {
+    return fetch(`http://localhost:9090/api/blogs/${toEditBlog.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(toEditStudent),
+      body: JSON.stringify(toEditBlog),
     })
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        onUpdateStudent(data);
+        onUpdateBlog(data);
         //this line just for cleaning the form
         clearForm();
       });
@@ -71,49 +92,83 @@ const MyForm = ({ onSaveStudent, editingStudent, onUpdateStudent }) => {
   //A function to handle the submit in both cases - Post and Put request!
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (student.id) {
-      putStudent(student);
+    if (blog.id) {
+      putBlog(blog);
     } else {
-      postStudent(student);
+      postBlog(blog);
     }
   };
 
   return (
-    <Form className="form-students" onSubmit={handleSubmit}>
+    <Form className="form-blogs" onSubmit={handleSubmit}>
       <Form.Group>
-        <Form.Label>First Name</Form.Label>
+        <Form.Label>Title</Form.Label>
         <input
           type="text"
-          id="add-user-name"
-          placeholder="First Name"
+          id="add-title-name"
+          placeholder="Title"
           required
-          value={student.firstname}
-          onChange={handleNameChange}
+          value={blog.title}
+          onChange={handleTitleChange}
         />
       </Form.Group>
       <Form.Group>
-        <Form.Label>Last Name</Form.Label>
+        <Form.Label>Blog</Form.Label>
         <input
           type="text"
-          id="add-user-lastname"
-          placeholder="Last Name"
+          id="add-blog"
+          placeholder="Blog"
           required
-          value={student.lastname}
-          onChange={handleLastnameChange}
+          value={blog.body_blog}
+          onChange={handleBlogChange}
         />
       </Form.Group>
-      <Form.Check
+      <Form.Group>
+        <Form.Label>Image</Form.Label>
+        <input
+          type="text"
+          id="add-image"
+          placeholder="Image"
+          required
+          value={blog.image}
+          onChange={handleImageChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Secondary Image</Form.Label>
+        <input
+          type="text"
+          id="add-image"
+          placeholder="Image"
+          required
+          value={blog.seconday_image}
+          onChange={handleSecondaryImageChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Date</Form.Label>
+        <input
+          type="text"
+          id="add-date"
+          placeholder="Date"
+          required
+          value={blog.date}
+          onChange={handleDateChange}
+        />
+      </Form.Group>
+
+      {/* <Form.Check
         type={"checkbox"}
         id={`isCurrent`}
-        checked={student.is_current}
+        checked={blog.is_current}
         onChange={handleCheckChange}
         label={`Are they in the current program?`}
-      />
+      /> */}
       <Form.Group>
         <Button type="submit" variant="outline-success">
-          {student.id ? "Edit Student" : "Add Student"}
+          {blog.id ? "Edit Student" : "Add Student"}
         </Button>
-        {student.id ? (
+        {blog.id ? (
           <Button type="button" variant="outline-warning" onClick={clearForm}>
             Cancel
           </Button>

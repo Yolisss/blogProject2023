@@ -1,18 +1,15 @@
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MyNavBar from './components/Navbar'
-import ListStudents from './components/ListStudents'
-
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MyNavBar from "./components/Navbar";
+import ListBlogs from "./components/ListBlogs";
 
 function App() {
-
   return (
     <div className="App">
       <MyNavBar />
-      <ListStudents />
-
+      <ListBlogs />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
