@@ -5,6 +5,8 @@ import Blog from "./Blog";
 
 const ListBlogs = () => {
   // this is my original state with an array of students
+  //arr of obj from db blogs
+  //every row is its own obj
   const [blogs, setBlogs] = useState([]);
 
   //this is the state needed for the UpdateRequest
@@ -37,8 +39,10 @@ const ListBlogs = () => {
 
   //A function to handle the Delete funtionality
   const onDelete = (blog) => {
+    console.log(blog);
     //console.log(student, "delete method")
-    return fetch(`http://localhost:9090/api/blogs/${blog.id}`, {
+    //blog_id: 1, title: 'test', blog_body: 'test', image: 'test', secondary_image: 'test', …}
+    return fetch(`http://localhost:9090/api/blogs/${blog.blog_id}`, {
       method: "DELETE",
     }).then((response) => {
       //console.log(response);

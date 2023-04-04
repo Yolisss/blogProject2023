@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import * as ioicons from "react-icons/io5";
 
 const Blog = ({ blog, toUpdate, toDelete }) => {
+  //blog is an obj
   const onUpdate = (toUpdateBlog) => {
     toUpdate(toUpdateBlog);
   };
@@ -15,7 +16,11 @@ const Blog = ({ blog, toUpdate, toDelete }) => {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>{blog.title}</Card.Title>
+        <Card.Title>
+          <img src={blog.image} alt="test" />
+          <img src={blog.secondary_image} alt="secondtest" />
+          {blog.title} {blog.blog_body} {blog.date}
+        </Card.Title>
         <Button
           variant="outline-danger"
           onClick={() => {

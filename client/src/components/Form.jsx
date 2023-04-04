@@ -74,7 +74,7 @@ const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
 
   //A function to handle the post request
   const putBlog = (toEditBlog) => {
-    return fetch(`http://localhost:9090/api/blogs/${toEditBlog.id}`, {
+    return fetch(`http://localhost:9090/api/blogs/${toEditBlog.blog_id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(toEditBlog),
