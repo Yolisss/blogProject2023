@@ -41,6 +41,7 @@ const ListBlogs = () => {
   const onDelete = (blog) => {
     console.log(blog);
     //console.log(student, "delete method")
+    //YOUR ID IN URL NEEDS TO MATCH WITH HOW YOU HAVE IT WRITTEN IN YOUR DB
     //blog_id: 1, title: 'test', blog_body: 'test', image: 'test', secondary_image: 'test', …}
     return fetch(`http://localhost:9090/api/blogs/${blog.blog_id}`, {
       method: "DELETE",
