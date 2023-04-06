@@ -17,8 +17,8 @@ const Blog = ({ blog, toUpdate, toDelete }) => {
     <Card>
       <Card.Body>
         <Card.Title>
-          <img src={blog.image} alt="test" />
-          <img src={blog.secondary_image} alt="secondtest" />
+          <img src={blog.image} className="images" alt="test" />
+          <img src={blog.secondary_image} className="images" alt="secondtest" />
           {blog.title} {blog.blog_body} {blog.date}
         </Card.Title>
         <Button
