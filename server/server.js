@@ -57,7 +57,8 @@ app.post("/api/blogs", async (req, res) => {
 app.delete("/api/blogs/:blogId", async (req, res) => {
   try {
     const blogId = req.params.blogId;
-    await db.query("DELETE FROM blogs WHERE id=$1", [blogId]);
+    console.log(blogId);
+    await db.query("DELETE FROM blogs WHERE blog_id=$1", [blogId]);
     console.log("From the delete request-url", blogId);
     res.status(200).end();
   } catch (e) {
@@ -72,7 +73,7 @@ app.put("/api/blogs/:blogId", async (req, res) => {
   //This will be the id that I want to find in the DB - the student to be updated
   const blogId = req.params.blogId;
   const updatedBlog = {
-    id: req.body.id,
+    blog_id: blogId,
     title: req.body.title,
     blog_body: req.body.blog_body,
     image: req.body.image,
@@ -85,13 +86,14 @@ app.put("/api/blogs/:blogId", async (req, res) => {
     updatedBlog
   );
   // UPDATE students SET lastname = "something" WHERE id="16";
-  const query = `UPDATE blogs SET title=$1, blog_body=$2, image=$3 secondary_image=$4 date=$5 WHERE id=${blogId} RETURNING *`;
+  const query = `UPDATE blogs SET title=$1, blog_body=$2, image=$3, secondary_image=$4, date=$5 WHERE id=$6 RETURNING *`;
   const values = [
     updatedBlog.title,
     updatedBlog.blog_body,
     updatedBlog.image,
     updatedBlog.secondary_image,
     updatedBlog.date,
+    updatedBlog.blog_id,
   ];
   try {
     const updated = await db.query(query, values);
