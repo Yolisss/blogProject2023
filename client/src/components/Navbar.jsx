@@ -2,6 +2,11 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Logo from "../assets/BlueTechtonicaWord.png";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//Browser router which will actually help connect to the browser
+//routes component which is going to be the parent for all our routes
+//route, used to set up a single page
 
 function MyNavBar(props) {
   return (
