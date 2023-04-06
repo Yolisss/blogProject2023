@@ -14,7 +14,7 @@ const Blog = ({ blog, toUpdate, toDelete }) => {
   };
 
   return (
-    <Card>
+    <Card className="cards">
       <Card.Body>
         <Card.Title>
           <img src={blog.image} className="images" alt="test" />

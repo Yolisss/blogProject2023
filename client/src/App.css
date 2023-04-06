@@ -75,3 +75,9 @@ button.btn.btn-primary {
   width: 60%;
   height: auto;
 }
+.card {
+  width: 60%;
+}
+.list-blogs {
+  width: 50%;
+}
