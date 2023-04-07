@@ -4,7 +4,7 @@ body {
 
 .App {
   min-height: 100vh;
-  background-color: rgb(238, 232, 232);
+  background-color: rgb(193 217 217);
   margin: 5px;
 }
 
@@ -86,7 +86,7 @@ button.btn.btn-primary {
   width: 50%;
 }
 .home-page {
-  background-color: pink;
+  background-color: #8abdc5;
   padding: 10%;
   text-align: center;
   margin: 10%;
