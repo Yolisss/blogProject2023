@@ -8,7 +8,6 @@ const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
       title: "",
       blog_body: "",
       image: "",
-      secondary_image: "",
       date: "",
     }
   );
@@ -28,10 +27,6 @@ const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
     const image = event.target.value;
     setBlog((blog) => ({ ...blog, image }));
   };
-  const handleSecondaryImageChange = (event) => {
-    const secondary_image = event.target.value;
-    setBlog((blog) => ({ ...blog, secondary_image }));
-  };
   const handleDateChange = (event) => {
     const date = event.target.value;
     setBlog((blog) => ({ ...blog, date }));
@@ -48,7 +43,6 @@ const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
       title: "",
       blog_body: "",
       image: "",
-      secondary_image: "",
       date: "",
     });
   };
@@ -132,17 +126,6 @@ const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
           required
           value={blog.image}
           onChange={handleImageChange}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Secondary Image</Form.Label>
-        <input
-          type="text"
-          id="add-image"
-          placeholder="Image"
-          required
-          value={blog.seconday_image}
-          onChange={handleSecondaryImageChange}
         />
       </Form.Group>
       <Form.Group>

@@ -1,7 +1,5 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
-import * as ioicons from "react-icons/io5";
+import { Card, Button, Image, Icon } from "semantic-ui-react";
 
 const Blog = ({ blog, toUpdate, toDelete }) => {
   //blog is an obj
@@ -15,12 +13,12 @@ const Blog = ({ blog, toUpdate, toDelete }) => {
 
   return (
     <Card className="cards">
-      <Card.Body>
-        <Card.Title>
-          <img src={blog.image} className="images" alt="test" />
-          <img src={blog.secondary_image} className="images" alt="secondtest" />
-          {blog.title} {blog.blog_body} {blog.date}
-        </Card.Title>
+      <Image src={blog.image} className="images" alt="test" />
+      <Card.Content>
+        <Card.Header>{blog.title}</Card.Header>
+        <Card.Meta>{blog.date}</Card.Meta>
+        <Card.Description>{blog.blog_body}</Card.Description>
+
         <Button
           variant="outline-danger"
           onClick={() => {
@@ -28,7 +26,7 @@ const Blog = ({ blog, toUpdate, toDelete }) => {
           }}
           style={{ padding: "0.6em", marginRight: "0.9em" }}
         >
-          <ioicons.IoTrash />
+          <Icon name="trash" />
         </Button>
         <Button
           variant="outline-info"
@@ -38,9 +36,9 @@ const Blog = ({ blog, toUpdate, toDelete }) => {
           style={{ padding: "0.6em" }}
         >
           {" "}
-          <ioicons.IoSync />
+          <Icon name="edit" />
         </Button>
-      </Card.Body>
+      </Card.Content>
     </Card>
   );
 };
