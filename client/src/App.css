@@ -4,7 +4,8 @@ body {
 
 .App {
   min-height: 100vh;
-  background-color: rgb(193 217 217);
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pf-s52-ted-3417-pom-job597.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=25bb126ae1ab2a617a24478a8bf8465d");
+  /* background-color: rgb(193 217 217); */
   margin: 5px;
 }
 
@@ -86,9 +87,14 @@ button.btn.btn-primary {
   width: 50%;
 }
 .home-page {
-  background-color: #8abdc5;
+  background-color: #d1a07c;
+  /* background-color: #e0a174; */
+  opacity: 0.8;
   padding: 10%;
   text-align: center;
   margin: 10%;
   border: solid;
+}
+.navbar {
+  background-color: pink;
 }

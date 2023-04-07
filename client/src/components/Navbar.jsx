@@ -17,15 +17,15 @@ function MyNavBar(props) {
   return (
     <>
       <Navbar bg="dark" variant="dark" sticky="top">
-        <Container>
-          <Navbar.Brand href="/">
+        <Container className="navbar">
+          {/* <Navbar.Brand href="/">
             <img
               src={Logo}
               height="30"
               className="d-lg-inline-block"
               alt="React Bootstrap logo"
             />
-          </Navbar.Brand>
+          </Navbar.Brand> */}
           <Link to="/" className="nav-link">
             Home
           </Link>
