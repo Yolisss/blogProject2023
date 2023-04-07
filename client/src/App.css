@@ -81,7 +81,8 @@ button.btn.btn-primary {
   width: 50%;
 } */
 .home-page {
-  background-image: url("https://images.unsplash.com/photo-1546387903-6d82d96ccca6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWluaW1hbCUyMHBsYW50fGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+  background-image: url("https://img.freepik.com/premium-photo/eucalyptus-branches-on-a-white-background_76158-145.jpg");
+  /* background-image: url("https://images.unsplash.com/photo-1546387903-6d82d96ccca6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWluaW1hbCUyMHBsYW50fGVufDB8fDB8fA%3D%3D&w=1000&q=80"); */
   /* background-color: #9fa9d8; */
   /* background-color: #e0a174; */
   opacity: 0.8;
@@ -98,7 +99,8 @@ button.btn.btn-primary {
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.9);
 }
 .navbar {
-  background-color: #7ca4d1;
+  background-color: #49baba;
+  color: black;
 }
 .navbarstructure {
   background-color: white;
@@ -111,6 +113,7 @@ button.btn.btn-primary {
 .indiv-cards {
   margin-bottom: 1rem;
 }
+
 /* background-repeat: no-repeat;
   background-size: cover;
   background-size: 50%;
