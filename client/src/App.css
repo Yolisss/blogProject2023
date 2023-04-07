@@ -106,7 +106,14 @@ button.btn.btn-primary {
 .navbarstructure {
   background-color: white;
 }
+.selfie-image {
+  width: 50%;
+  height: 50%;
+}
 
+.indiv-cards {
+  margin: 1rem;
+}
 /* background-repeat: no-repeat;
   background-size: cover;
   background-size: 50%;

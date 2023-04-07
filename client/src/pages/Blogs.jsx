@@ -63,16 +63,19 @@ export default function Blogs() {
     <div className="mybody">
       <div className="list-blogs">
         <h2>Blog Project </h2>
-        <ul>
-          {blogs.map((blog) => {
-            return (
-              <li key={blog.id}>
-                {" "}
-                <Blog blog={blog} toDelete={onDelete} toUpdate={onUpdate} />
-              </li>
-            );
-          })}
-        </ul>
+        <div className="indiv-cards">
+          <ul>
+            {blogs.map((blog) => {
+              return (
+                <li key={blog.id} className="indiv-cards">
+                  {" "}
+                  <Blog blog={blog} toDelete={onDelete} toUpdate={onUpdate} />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        <br />
       </div>
       <MyForm
         key={editingBlog ? editingBlog.id : null}
