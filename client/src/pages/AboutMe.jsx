@@ -3,7 +3,7 @@ import IMAGES from "../Images/IMAGES";
 
 export default function AboutMe() {
   return (
-    <div>
+    <div className="container">
       <div>aboutme</div>
       <img src={IMAGES.Selfie2} alt="" className="selfie-image" />
       <img src={IMAGES.Selfie1} alt="" className="selfie-image" />
