@@ -5,8 +5,10 @@ import Blog from "../components/Blog";
 
 const Home = () => {
   return (
-    <div className="home-page">
-      <div className="home-card">Documenting the best in food and travel</div>
+    <div className="container">
+      <div className="home-page">
+        <div className="home-card">Documenting the best in food and travel</div>
+      </div>
     </div>
   );
 };

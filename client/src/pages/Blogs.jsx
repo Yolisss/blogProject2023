@@ -60,14 +60,14 @@ export default function Blogs() {
   };
 
   return (
-    <div className="mybody">
+    <div className="container">
       <div className="list-blogs">
         <h2>Blog Project </h2>
-        <div className="indiv-cards">
-          <ul>
+        <div>
+          <ul className="row text-center ps-0">
             {blogs.map((blog) => {
               return (
-                <li key={blog.id} className="indiv-cards">
+                <li key={blog.id} className="indiv-cards col-md-4">
                   {" "}
                   <Blog blog={blog} toDelete={onDelete} toUpdate={onUpdate} />
                 </li>
