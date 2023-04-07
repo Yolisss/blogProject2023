@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 function MyNavBar(props) {
   return (
     <>
-      <Navbar bg="dark" variant="dark" sticky="top">
+      <Navbar className="navbarstructure">
         <Container className="navbar">
           {/* <Navbar.Brand href="/">
             <img
