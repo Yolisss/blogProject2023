@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import * as ioicons from "react-icons/io5";
 import MyForm from "../components/Form";
 import Blog from "../components/Blog";
+import { Card } from "semantic-ui-react";
 
 export default function Blogs() {
   // this is my original state with an array of students
@@ -64,16 +64,16 @@ export default function Blogs() {
       <div className="list-blogs">
         <h2>Blog Project </h2>
         <div>
-          <ul className="row text-center ps-0">
+          <Card.Group className="row text-center ps-0">
             {blogs.map((blog) => {
               return (
-                <li key={blog.id} className="indiv-cards col-md-4">
-                  {" "}
-                  <Blog blog={blog} toDelete={onDelete} toUpdate={onUpdate} />
-                </li>
+                // <li key={blog.id} className="indiv-cards col-md-4">
+                //   {" "}
+                <Blog blog={blog} toDelete={onDelete} toUpdate={onUpdate} />
+                // </li>
               );
             })}
-          </ul>
+          </Card.Group>
         </div>
         <br />
       </div>
