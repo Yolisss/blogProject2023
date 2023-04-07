@@ -4,7 +4,11 @@ import MyForm from "../components/Form";
 import Blog from "../components/Blog";
 
 const Home = () => {
-  return <div>Welcome!</div>;
+  return (
+    <div className="home-page">
+      <div className="home-card">Personal Blogs!</div>
+    </div>
+  );
 };
 
 export default Home;
