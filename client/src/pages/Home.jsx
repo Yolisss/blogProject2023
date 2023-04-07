@@ -6,7 +6,7 @@ import Blog from "../components/Blog";
 const Home = () => {
   return (
     <div className="home-page">
-      <div className="home-card">Personal Blogs!</div>
+      <div className="home-card">Documenting the best in food and travel</div>
     </div>
   );
 };

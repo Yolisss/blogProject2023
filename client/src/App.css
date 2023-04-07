@@ -4,11 +4,6 @@ body {
 
 .App {
   min-height: 100vh;
-  background-repeat: no-repeat;
-  /* background-size: cover; */
-  background-size: 50%;
-  background-image: url("https://i.redd.it/p188us1er0d51.jpg");
-  /* background-color: rgb(193 217 217); */
   margin: 5px;
 }
 
@@ -90,16 +85,31 @@ button.btn.btn-primary {
   width: 50%;
 }
 .home-page {
-  background-color: #9fa9d8;
+  background-image: url("https://images.unsplash.com/photo-1546387903-6d82d96ccca6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bWluaW1hbCUyMHBsYW50fGVufDB8fDB8fA%3D%3D&w=1000&q=80");
+  /* background-color: #9fa9d8; */
   /* background-color: #e0a174; */
   opacity: 0.8;
   padding: 10%;
   text-align: center;
   margin: 10%;
+  padding: 100%;
+  background-repeat: no-repeat;
+}
+.home-card {
+  position: relative;
+  text-align: center;
+  color: white;
 }
 .navbar {
   background-color: #7ca4d1;
 }
 .navbarstructure {
-  background-color: pink;
+  background-color: white;
 }
+
+/* background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 50%;
+  background-image: url("https://i.pinimg.com/736x/e2/a8/a0/e2a8a08c3f5435858e2fa27b9e378067.jpg"); */
+/* background-image: url("https://i.redd.it/p188us1er0d51.jpg"); */
+/* background-color: rgb(193 217 217); */
