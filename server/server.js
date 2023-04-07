@@ -31,19 +31,12 @@ app.post("/api/blogs", async (req, res) => {
       title: req.body.title,
       blog_body: req.body.blog_body,
       image: req.body.image,
-      secondary_image: req.body.secondary_image,
       date: req.body.date,
     };
     //console.log([newStudent.firstname, newStudent.lastname, newStudent.iscurrent]);
     const result = await db.query(
-      "INSERT INTO blogs(title, blog_body, image, secondary_image, date) VALUES($1, $2, $3, $4, $5) RETURNING *",
-      [
-        newBlog.title,
-        newBlog.blog_body,
-        newBlog.image,
-        newBlog.secondary_image,
-        newBlog.date,
-      ]
+      "INSERT INTO blogs(title, blog_body, image, date) VALUES($1, $2, $3, $4) RETURNING *",
+      [newBlog.title, newBlog.blog_body, newBlog.image, newBlog.date]
     );
     console.log(result.rows[0]);
     res.json(result.rows[0]);
@@ -77,7 +70,6 @@ app.put("/api/blogs/:blogId", async (req, res) => {
     title: req.body.title,
     blog_body: req.body.blog_body,
     image: req.body.image,
-    secondary_image: req.body.secondary_image,
     date: req.body.date,
   };
   console.log("In the server from the url - the blog id", blogId);
@@ -86,12 +78,11 @@ app.put("/api/blogs/:blogId", async (req, res) => {
     updatedBlog
   );
   // UPDATE students SET lastname = "something" WHERE id="16";
-  const query = `UPDATE blogs SET title=$1, blog_body=$2, image=$3, secondary_image=$4, date=$5 WHERE id=$6 RETURNING *`;
+  const query = `UPDATE blogs SET title=$1, blog_body=$2, image=$3, date=$4 WHERE id=$5 RETURNING *`;
   const values = [
     updatedBlog.title,
     updatedBlog.blog_body,
     updatedBlog.image,
-    updatedBlog.secondary_image,
     updatedBlog.date,
     updatedBlog.blog_id,
   ];
