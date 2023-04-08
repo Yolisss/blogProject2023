@@ -78,7 +78,7 @@ app.put("/api/blogs/:blogId", async (req, res) => {
     updatedBlog
   );
   // UPDATE students SET lastname = "something" WHERE id="16";
-  const query = `UPDATE blogs SET title=$1, blog_body=$2, image=$3, date=$4 WHERE id=$5 RETURNING *`;
+  const query = `UPDATE blogs SET title=$1, blog_body=$2, image=$3, date=$4 WHERE blog_id=$5 RETURNING *`;
   const values = [
     updatedBlog.title,
     updatedBlog.blog_body,
