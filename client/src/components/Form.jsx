@@ -86,7 +86,7 @@ const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
   //A function to handle the submit in both cases - Post and Put request!
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (blog.id) {
+    if (blog.blog_id) {
       putBlog(blog);
     } else {
       postBlog(blog);
@@ -149,9 +149,9 @@ const MyForm = ({ onSaveBlog, editingBlog, onUpdateBlog }) => {
       /> */}
       <Form.Group>
         <Button type="submit" variant="outline-success">
-          {blog.id ? "Edit Blog" : "Add Blog"}
+          {blog.blog_id ? "Edit Blog" : "Add Blog"}
         </Button>
-        {blog.id ? (
+        {blog.blog_id ? (
           <Button type="button" variant="outline-warning" onClick={clearForm}>
             Cancel
           </Button>

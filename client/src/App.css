@@ -98,12 +98,12 @@ button.btn.btn-primary {
   color: white;
   text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.9);
 }
-.navbar {
-  background-color: #49baba;
+/* .navbar {
+  background-color: #98d0f1;
   color: black;
-}
+} */
 .navbarstructure {
-  background-color: white;
+  color: red;
 }
 .selfie-image {
   width: 50%;

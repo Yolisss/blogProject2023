@@ -16,8 +16,11 @@ import { Link } from "react-router-dom";
 function MyNavBar(props) {
   return (
     <>
-      <Navbar className="navbarstructure">
-        <Container className="navbar">
+      <Navbar
+        className="navbarstructure"
+        style={{ backgroundColor: "lightgray" }}
+      >
+        <Container className="navbar" style={{ backgroundColor: "lightgray" }}>
           {/* <Navbar.Brand href="/">
             <img
               src={Logo}
@@ -30,7 +33,7 @@ function MyNavBar(props) {
             Home
           </Link>
           <Link to="/aboutme" className="nav-link">
-            About me
+            Get to know Yolis
           </Link>
           <Link to="/blogs" className="nav-link">
             Blogs
